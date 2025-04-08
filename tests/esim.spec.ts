@@ -20,19 +20,6 @@ test('Verify eSIM package details', async ({ page }) => {
   });
 
   await test.step('Verify the package details in the popup', async () => {
-    // Log the text inside the elements for debugging
-    const operatorTitleText = await esim.operatorTitle.innerText();
-    const coverageValueText = await esim.coverageValue.innerText();
-    const dataValueText = await esim.dataValue.innerText();
-    const validityValueText = await esim.validityValue.innerText();
-    const priceValueText = await esim.priceValue.innerText();
-
-    console.log('Operator Title:', operatorTitleText);
-    console.log('Coverage:', coverageValueText);
-    console.log('Data:', dataValueText);
-    console.log('Validity:', validityValueText);
-    console.log('Price:', priceValueText);
-
     await expect(esim.operatorTitle).toHaveText(JapanPackageDetails.TITLE);
     await expect(esim.coverageValue).toHaveText(JapanPackageDetails.COVERAGE);
     await expect(esim.dataValue).toHaveText(JapanPackageDetails.DATA);

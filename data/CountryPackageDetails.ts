@@ -11,7 +11,7 @@ export interface PackageDetails {
     COVERAGE: 'Japan',
     DATA: '1 GB',
     VALIDITY: '7 Days',
-    PRICE: '4.50 €',
+    PRICE: '$4.50 USD',
   };
   
 //   More countries can be added in the future
