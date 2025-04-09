@@ -10,34 +10,34 @@ Before running the tests, make sure you have the following:
 ## Installation
 
 1. Clone this repository to your local machine:
-
+```bash
 git clone https://github.com/your-repo/playwright-tests.git
 cd playwright-e2e
-
+```
 2. Install the dependencies:
-
+```bash
 npm install
-
+```
 3. Install Playwright and required browsers:
-
+```bash
 npx playwright install
-
+```
 ## Run all tests (UI + API)
-
+```bash
 npx playwright test
-
+```
 ## Running UI Tests
-
+```bash
 npm run test:ui
-
+```
 ## Running API Tests
-
+```bash
 npm run test:api
-
+```
 ## Show report with test results
-
+```bash
 npx playwright show-report
-
+```
 ## GitHub Actions for CI
 
 This repository uses GitHub Actions to automate running Playwright tests for both UI and API on every code change or pull request. This helps ensure the application behaves correctly and all tests pass before any changes are merged.
