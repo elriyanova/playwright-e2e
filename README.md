@@ -52,3 +52,18 @@ The GitHub Actions workflow is triggered on push or pull_request events for the 
 5. Run UI tests: The UI tests are executed using the npm run test:ui script.
 6. Run API tests: The API tests are executed using the npm run test:api script.
 7. Upload test results: After the tests are completed, the test reports are uploaded as an artifact for easy inspection.
+
+
+##  Test implementation approach
+1. Test structure
+UI Tests: Test simulate user interactions to verify frontend functionality.
+API Tests: Test ensure the backend APIs return the correct data.
+
+2. UI test implementation
+UI test focus on verifying that the user interface behaves as expected in positive scenario. Simulate real user actions such as navigating to a page, searching for an eSIM package, and verifying that the correct details (title, coverage, data, validity, and price) are displayed.
+
+3. API test implementation
+API test verifies that the backend service returns the expected data. Focus on positive scenario, such as ensuring the correct response for valid API requests.
+
+4. Edge Cases
+Edge cases are not covered in the suit, all tests focus on valid actions and ensure that the application works as expected under normal circumstances.
