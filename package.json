@@ -2,7 +2,10 @@
   "name": "playwright-e2e",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test:api": "playwright test tests/api/*.ts",
+    "test:ui": "playwright test tests/ui/*.ts"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elriyanova/playwright-e2e.git"

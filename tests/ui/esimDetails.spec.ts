@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../pages/HomePage';
-import { EsimPage } from '../pages/ESIMPage';
-import { JapanPackageDetails } from '../data/CountryPackageDetails';
+import { HomePage } from '../../pages/HomePage';
+import { EsimPage } from '../../pages/ESIMPage';
+import { JapanPackageDetails } from '../../data/CountryPackageDetails';
 
 test('Verify eSIM package details', async ({ page }) => {
   const home = new HomePage(page);
@@ -24,6 +24,13 @@ test('Verify eSIM package details', async ({ page }) => {
     await expect(esim.coverageValue).toHaveText(JapanPackageDetails.COVERAGE);
     await expect(esim.dataValue).toHaveText(JapanPackageDetails.DATA);
     await expect(esim.validityValue).toHaveText(JapanPackageDetails.VALIDITY);
-    await expect(esim.priceValue).toHaveText(JapanPackageDetails.PRICE);
+
+    // Price can be displayed with different currencies, depending on the user's location and selected currency on the home page.
+    // I added EUR and USD support, with having more knowledges in implementation I would add in precondition the request to
+    // get currency from user settings and take the value to compare with expected currency in Price
+
+    const price = await esim.priceValue.innerText();
+    const expectedPrices = [JapanPackageDetails.PRICE_USD, JapanPackageDetails.PRICE_EUR];
+    expect(expectedPrices.includes(price)).toBeTruthy();
   });
 });
